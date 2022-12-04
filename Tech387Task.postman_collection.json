@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "256f4dfa-b66f-4899-8d02-f5210b9d9076",
+		"name": "Tech387Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/userslist",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"userslist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login successfull",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"career@tech387.com\",\r\n    \"password\" : \"Pass123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login pogresan email ili password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"carerer@tech387.com\",\r\n    \"password\" : \"Pass12344!\"\r\n}"
+				},
+				"url": {
+					"raw": "https://tested.free.beeceptor.com/login",
+					"protocol": "https",
+					"host": [
+						"tested",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login - Nema network konekcije",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"career@tech387.com\",\r\n    \"password\" : \"Pass123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tested.free.beeceptor.com/networkerror",
+					"protocol": "https",
+					"host": [
+						"tested",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"networkerror"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login - Interni server error",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"career@tech387.com\",\r\n    \"password\" : \"Pass123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tested.free.beeceptor.com/servererror",
+					"protocol": "https",
+					"host": [
+						"tested",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"servererror"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
